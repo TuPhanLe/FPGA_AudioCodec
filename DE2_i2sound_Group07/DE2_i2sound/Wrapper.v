@@ -1,17 +1,21 @@
 module Wrapper (
-input sample_clock,  
-input reset, 
+ sample_clock,  
+ reset, 
 //input [1:0] selector, 
-input [15:0] input_sample, 
-output reg [15:0] output_sample
+ input_sample, 
+ output_sample
 );
-	
-	wire [15:0] myecho;
+input sample_clock; 
+input reset;
+//input [1:0] selector, 
+input [15:0] input_sample; 
+output reg [15:0] output_sample;
+
 	wire [15:0] myfilter;
 //	reg  [1:0] switches;
 	
 //	echo_machine param (.sample_clock(sample_clock), .input_sample(input_sample), .output_sample(myecho));
-	filter param2 (.sample_clock(sample_clock), .reset(reset), .input_sample1(input_sample), .output_sample1(myfilter));
+	filter param(.sample_clock(sample_clock), .reset(reset), .input_sample1(input_sample), .output_sample1(myfilter));
 	
 always @(posedge sample_clock)
 begin

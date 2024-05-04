@@ -1,29 +1,58 @@
 `timescale 1ns / 1ps
-module filter (input sample_clock, input reset, input [15:0] input_sample1, output [15:0] output_sample1);
+module filter#(parameter N = 65)(input sample_clock, input reset, input [15:0] input_sample1, output reg [15:0] output_sample1);
 
-parameter N = 45; //Specify the number of taps
+ //Specify the number of taps
 
-reg  [15:0] delayholder[N-1:0];
+reg [15:0] delayholder[N-1:0];
 wire signed[31:0] summation[N-1:0];
-wire signed[15:0] finsummations[N-1:0];
-wire signed[15:0] finsummation;
+reg signed[15:0] finsummations[N-1:0];
+reg signed[15:0] finsummation;
 
 //Specifying our coefficients
-reg signed[15:0] coeffs[N-1:0] = '{
-        16'h0007, 16'h0015, 16'h002B, 16'h004C, 16'h007E,
-        16'h00C5, 16'h0127, 16'h01A6, 16'h0243, 16'h02FF,
-        16'h03D9, 16'h04CC, 16'h05D4, 16'h06EA, 16'h0807,
-        16'h0920, 16'h0A2E, 16'h0B25, 16'h0BFF, 16'h0CB1,
-        16'h0D35, 16'h0D87, 16'h0DA3, 16'h0D87, 16'h0D35,
-        16'h0CB1, 16'h0BFF, 16'h0B25, 16'h0A2E, 16'h0920,
-        16'h0807, 16'h06EA, 16'h05D4, 16'h04CC, 16'h03D9,
-        16'h02FF, 16'h0243, 16'h01A6, 16'h0127, 16'h00C5,
-        16'h007E, 16'h004C, 16'h002B, 16'h0015, 16'h0007
- };
+reg signed [15:0] coeffs[200:0];
 
 integer x;
 integer z;
 
+always @(*)
+begin
+
+for (x=0; x<N; x=x+31)
+begin
+
+    coeffs[x+0] = 0;
+    coeffs[x+1] = 756;
+    coeffs[x+2] = 0;
+    coeffs[x+3] = -1010;
+    coeffs[x+4] = 0;
+    coeffs[x+5] = 1540;
+    coeffs[x+6] = 0;
+    coeffs[x+7] = -2112;
+    coeffs[x+8] = 0;
+    coeffs[x+9] = 2662;
+    coeffs[x+10] = 0;
+    coeffs[x+11] = -3119;
+    coeffs[x+12] = 0;
+    coeffs[x+13] = 3422;
+    coeffs[x+14] = 0;
+    coeffs[x+15] = 29240;
+    coeffs[x+16] = 0;
+    coeffs[x+17] = 3422;
+    coeffs[x+18] = 0;
+    coeffs[x+19] = -3119;
+    coeffs[x+20] = 0;
+    coeffs[x+21] = 2662;
+    coeffs[x+22] = 0;
+    coeffs[x+23] = -2112;
+    coeffs[x+24] = 0;
+    coeffs[x+25] = 1540;
+    coeffs[x+26] = 0;
+    coeffs[x+27] = -1010;
+    coeffs[x+28] = 0;
+    coeffs[x+29] = 756;
+    coeffs[x+30] = 0;
+	 end
+end
 
 generate
 genvar i;

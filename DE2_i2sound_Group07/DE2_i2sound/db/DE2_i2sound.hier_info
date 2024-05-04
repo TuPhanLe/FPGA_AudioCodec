@@ -1,4 +1,347 @@
-|filter
+|DE2_i2sound
+I2C_SCLK <= i2c:inst.I2C_SCLK
+50MHZ => CLOCK_500:inst4.CLOCK
+KEY0 => keytr:inst1.key
+I2C_SDAT <> i2c:inst.I2C_SDAT
+AUD_XCK <= XCK.DB_MAX_OUTPUT_PORT_TYPE
+AUD_DACDAT <= parallel_to_serial:inst10.data
+AUD_BCLK => parallel_to_serial:inst10.bclk
+AUD_BCLK => serial_to_parallel:inst20.bclk
+AUD_ADCLRCK => parallel_to_serial:inst10.lrclk
+AUD_ADCLRCK => Wrapper:inst5.sample_clock
+AUD_ADCLRCK => serial_to_parallel:inst20.lrclk
+AUD_ADCDAT => serial_to_parallel:inst20.in_data
+AUD_DACLRCK => ~NO_FANOUT~
+
+
+|DE2_i2sound|i2c:inst
+CLOCK => SD[0].CLK
+CLOCK => SD[1].CLK
+CLOCK => SD[2].CLK
+CLOCK => SD[3].CLK
+CLOCK => SD[4].CLK
+CLOCK => SD[5].CLK
+CLOCK => SD[6].CLK
+CLOCK => SD[7].CLK
+CLOCK => SD[8].CLK
+CLOCK => SD[9].CLK
+CLOCK => SD[10].CLK
+CLOCK => SD[11].CLK
+CLOCK => SD[12].CLK
+CLOCK => SD[13].CLK
+CLOCK => SD[14].CLK
+CLOCK => SD[15].CLK
+CLOCK => SD[16].CLK
+CLOCK => SD[17].CLK
+CLOCK => SD[18].CLK
+CLOCK => SD[19].CLK
+CLOCK => SD[20].CLK
+CLOCK => SD[21].CLK
+CLOCK => SD[22].CLK
+CLOCK => SD[23].CLK
+CLOCK => END~reg0.CLK
+CLOCK => ACK3.CLK
+CLOCK => ACK2.CLK
+CLOCK => ACK1.CLK
+CLOCK => SDO~reg0.CLK
+CLOCK => SCLK.CLK
+CLOCK => SD_COUNTER[0]~reg0.CLK
+CLOCK => SD_COUNTER[1]~reg0.CLK
+CLOCK => SD_COUNTER[2]~reg0.CLK
+CLOCK => SD_COUNTER[3]~reg0.CLK
+CLOCK => SD_COUNTER[4]~reg0.CLK
+CLOCK => SD_COUNTER[5]~reg0.CLK
+CLOCK => comb.DATAB
+I2C_SCLK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+I2C_SDAT <> I2C_SDAT
+I2C_DATA[0] => SD.DATAB
+I2C_DATA[1] => SD.DATAB
+I2C_DATA[2] => SD.DATAB
+I2C_DATA[3] => SD.DATAB
+I2C_DATA[4] => SD.DATAB
+I2C_DATA[5] => SD.DATAB
+I2C_DATA[6] => SD.DATAB
+I2C_DATA[7] => SD.DATAB
+I2C_DATA[8] => SD.DATAB
+I2C_DATA[9] => SD.DATAB
+I2C_DATA[10] => SD.DATAB
+I2C_DATA[11] => SD.DATAB
+I2C_DATA[12] => SD.DATAB
+I2C_DATA[13] => SD.DATAB
+I2C_DATA[14] => SD.DATAB
+I2C_DATA[15] => SD.DATAB
+I2C_DATA[16] => SD.DATAB
+I2C_DATA[17] => SD.DATAB
+I2C_DATA[18] => SD.DATAB
+I2C_DATA[19] => SD.DATAB
+I2C_DATA[20] => SD.DATAB
+I2C_DATA[21] => SD.DATAB
+I2C_DATA[22] => SD.DATAB
+I2C_DATA[23] => SD.DATAB
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+END <= END~reg0.DB_MAX_OUTPUT_PORT_TYPE
+W_R => ~NO_FANOUT~
+ACK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+RESET => END~reg0.PRESET
+RESET => ACK3.ACLR
+RESET => ACK2.ACLR
+RESET => ACK1.ACLR
+RESET => SDO~reg0.PRESET
+RESET => SCLK.PRESET
+RESET => SD_COUNTER[0]~reg0.PRESET
+RESET => SD_COUNTER[1]~reg0.PRESET
+RESET => SD_COUNTER[2]~reg0.PRESET
+RESET => SD_COUNTER[3]~reg0.PRESET
+RESET => SD_COUNTER[4]~reg0.PRESET
+RESET => SD_COUNTER[5]~reg0.PRESET
+RESET => SD[0].ENA
+RESET => SD[23].ENA
+RESET => SD[22].ENA
+RESET => SD[21].ENA
+RESET => SD[20].ENA
+RESET => SD[19].ENA
+RESET => SD[18].ENA
+RESET => SD[17].ENA
+RESET => SD[16].ENA
+RESET => SD[15].ENA
+RESET => SD[14].ENA
+RESET => SD[13].ENA
+RESET => SD[12].ENA
+RESET => SD[11].ENA
+RESET => SD[10].ENA
+RESET => SD[9].ENA
+RESET => SD[8].ENA
+RESET => SD[7].ENA
+RESET => SD[6].ENA
+RESET => SD[5].ENA
+RESET => SD[4].ENA
+RESET => SD[3].ENA
+RESET => SD[2].ENA
+RESET => SD[1].ENA
+SD_COUNTER[0] <= SD_COUNTER[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[1] <= SD_COUNTER[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[2] <= SD_COUNTER[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[3] <= SD_COUNTER[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[4] <= SD_COUNTER[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[5] <= SD_COUNTER[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SDO <= SDO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_i2sound|CLOCK_500:inst4
+CLOCK => COUNTER_500[0].CLK
+CLOCK => COUNTER_500[1].CLK
+CLOCK => COUNTER_500[2].CLK
+CLOCK => COUNTER_500[3].CLK
+CLOCK => COUNTER_500[4].CLK
+CLOCK => COUNTER_500[5].CLK
+CLOCK => COUNTER_500[6].CLK
+CLOCK => COUNTER_500[7].CLK
+CLOCK => COUNTER_500[8].CLK
+CLOCK => COUNTER_500[9].CLK
+CLOCK => COUNTER_500[10].CLK
+CLOCK_500 <= COUNTER_500[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA[0] <= DATA_A[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA[1] <= DATA_A[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA[2] <= DATA_A[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA[3] <= DATA_A[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA[4] <= DATA_A[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA[5] <= DATA_A[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA[6] <= DATA_A[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA[7] <= DATA_A[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA[8] <= DATA_A[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA[9] <= DATA_A[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA[10] <= DATA_A[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA[11] <= DATA_A[11].DB_MAX_OUTPUT_PORT_TYPE
+DATA[12] <= DATA_A[12].DB_MAX_OUTPUT_PORT_TYPE
+DATA[13] <= DATA_A[13].DB_MAX_OUTPUT_PORT_TYPE
+DATA[14] <= DATA_A[14].DB_MAX_OUTPUT_PORT_TYPE
+DATA[15] <= DATA_A[15].DB_MAX_OUTPUT_PORT_TYPE
+DATA[16] <= <GND>
+DATA[17] <= <GND>
+DATA[18] <= <VCC>
+DATA[19] <= <GND>
+DATA[20] <= <VCC>
+DATA[21] <= <VCC>
+DATA[22] <= <GND>
+DATA[23] <= <GND>
+END => comb.IN1
+END => DATA_A[0].CLK
+END => DATA_A[1].CLK
+END => DATA_A[2].CLK
+END => DATA_A[3].CLK
+END => DATA_A[4].CLK
+END => DATA_A[5].CLK
+END => DATA_A[6].CLK
+END => DATA_A[7].CLK
+END => DATA_A[8].CLK
+END => DATA_A[9].CLK
+END => DATA_A[10].CLK
+END => DATA_A[11].CLK
+END => DATA_A[12].CLK
+END => DATA_A[13].CLK
+END => DATA_A[14].CLK
+END => DATA_A[15].CLK
+END => address[0].CLK
+END => address[1].CLK
+END => address[2].CLK
+END => address[3].CLK
+END => address[4].CLK
+END => address[5].CLK
+RESET => vol[0].CLK
+RESET => vol[1].CLK
+RESET => vol[2].CLK
+RESET => vol[3].CLK
+RESET => vol[4].CLK
+RESET => vol[5].CLK
+RESET => vol[6].CLK
+RESET => vol[7].CLK
+RESET => address[0].ACLR
+RESET => address[1].ACLR
+RESET => address[2].ACLR
+RESET => address[3].ACLR
+RESET => address[4].ACLR
+RESET => address[5].ACLR
+GO <= comb.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK_2 <= COUNTER_500[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_i2sound|keytr:inst1
+key => comb.IN1
+ON <= comb.DB_MAX_OUTPUT_PORT_TYPE
+clock => KEYON~reg0.CLK
+clock => counter[0]~reg0.CLK
+clock => counter[1]~reg0.CLK
+clock => counter[2]~reg0.CLK
+clock => counter[3]~reg0.CLK
+clock => counter[4]~reg0.CLK
+clock => counter[5]~reg0.CLK
+clock => counter[6]~reg0.CLK
+clock => counter[7]~reg0.CLK
+clock => counter[8]~reg0.CLK
+clock => counter[9]~reg0.CLK
+KEYON <= KEYON~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[0] <= counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[4] <= counter[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[5] <= counter[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[6] <= counter[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[7] <= counter[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[8] <= counter[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[9] <= counter[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_i2sound|parallel_to_serial:inst10
+bclk => data_buffer[0].CLK
+bclk => data_buffer[1].CLK
+bclk => data_buffer[2].CLK
+bclk => data_buffer[3].CLK
+bclk => data_buffer[4].CLK
+bclk => data_buffer[5].CLK
+bclk => data_buffer[6].CLK
+bclk => data_buffer[7].CLK
+bclk => data_buffer[8].CLK
+bclk => data_buffer[9].CLK
+bclk => data_buffer[10].CLK
+bclk => data_buffer[11].CLK
+bclk => data_buffer[12].CLK
+bclk => data_buffer[13].CLK
+bclk => data_buffer[14].CLK
+bclk => data_buffer[15].CLK
+bclk => bit_counter[0].CLK
+bclk => bit_counter[1].CLK
+bclk => bit_counter[2].CLK
+bclk => bit_counter[3].CLK
+bclk => data~reg0.CLK
+bclk => lrclk_d1.CLK
+lrclk => start.IN1
+lrclk => lrclk_d1.DATAIN
+lrclk => new_data.IN1
+reset_n => data_buffer[0].ACLR
+reset_n => data_buffer[1].ACLR
+reset_n => data_buffer[2].ACLR
+reset_n => data_buffer[3].ACLR
+reset_n => data_buffer[4].ACLR
+reset_n => data_buffer[5].ACLR
+reset_n => data_buffer[6].ACLR
+reset_n => data_buffer[7].ACLR
+reset_n => data_buffer[8].ACLR
+reset_n => data_buffer[9].ACLR
+reset_n => data_buffer[10].ACLR
+reset_n => data_buffer[11].ACLR
+reset_n => data_buffer[12].ACLR
+reset_n => data_buffer[13].ACLR
+reset_n => data_buffer[14].ACLR
+reset_n => data_buffer[15].ACLR
+reset_n => bit_counter[0].PRESET
+reset_n => bit_counter[1].PRESET
+reset_n => bit_counter[2].PRESET
+reset_n => bit_counter[3].PRESET
+reset_n => data~reg0.ACLR
+in_data[0] => data_buffer[0].DATAIN
+in_data[1] => data_buffer[1].DATAIN
+in_data[2] => data_buffer[2].DATAIN
+in_data[3] => data_buffer[3].DATAIN
+in_data[4] => data_buffer[4].DATAIN
+in_data[5] => data_buffer[5].DATAIN
+in_data[6] => data_buffer[6].DATAIN
+in_data[7] => data_buffer[7].DATAIN
+in_data[8] => data_buffer[8].DATAIN
+in_data[9] => data_buffer[9].DATAIN
+in_data[10] => data_buffer[10].DATAIN
+in_data[11] => data_buffer[11].DATAIN
+in_data[12] => data_buffer[12].DATAIN
+in_data[13] => data_buffer[13].DATAIN
+in_data[14] => data_buffer[14].DATAIN
+in_data[15] => data.DATAB
+in_data[15] => data_buffer[15].DATAIN
+data <= data~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_i2sound|Wrapper:inst5
+sample_clock => sample_clock.IN1
+reset => reset.IN1
+input_sample[0] => input_sample[0].IN1
+input_sample[1] => input_sample[1].IN1
+input_sample[2] => input_sample[2].IN1
+input_sample[3] => input_sample[3].IN1
+input_sample[4] => input_sample[4].IN1
+input_sample[5] => input_sample[5].IN1
+input_sample[6] => input_sample[6].IN1
+input_sample[7] => input_sample[7].IN1
+input_sample[8] => input_sample[8].IN1
+input_sample[9] => input_sample[9].IN1
+input_sample[10] => input_sample[10].IN1
+input_sample[11] => input_sample[11].IN1
+input_sample[12] => input_sample[12].IN1
+input_sample[13] => input_sample[13].IN1
+input_sample[14] => input_sample[14].IN1
+input_sample[15] => input_sample[15].IN1
+output_sample[0] <= output_sample[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[1] <= output_sample[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[2] <= output_sample[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[3] <= output_sample[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[4] <= output_sample[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[5] <= output_sample[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[6] <= output_sample[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[7] <= output_sample[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[8] <= output_sample[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[9] <= output_sample[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[10] <= output_sample[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[11] <= output_sample[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[12] <= output_sample[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[13] <= output_sample[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[14] <= output_sample[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_sample[15] <= output_sample[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_i2sound|Wrapper:inst5|filter:param
 sample_clock => delayholder[0][0].CLK
 sample_clock => delayholder[0][1].CLK
 sample_clock => delayholder[0][2].CLK
@@ -2113,7 +2456,7 @@ output_sample1[14] <= Add63.DB_MAX_OUTPUT_PORT_TYPE
 output_sample1[15] <= Add63.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|filter|multiplier:mult1[0].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[0].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -2180,7 +2523,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[0].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[0].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -2251,7 +2594,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[0].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[0].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -2318,7 +2661,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[1].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[1].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -2385,7 +2728,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[1].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[1].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -2456,7 +2799,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[1].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[1].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -2523,7 +2866,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[2].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[2].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -2590,7 +2933,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[2].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[2].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -2661,7 +3004,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[2].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[2].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -2728,7 +3071,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[3].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[3].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -2795,7 +3138,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[3].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[3].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -2866,7 +3209,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[3].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[3].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -2933,7 +3276,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[4].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[4].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -3000,7 +3343,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[4].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[4].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -3071,7 +3414,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[4].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[4].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -3138,7 +3481,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[5].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[5].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -3205,7 +3548,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[5].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[5].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -3276,7 +3619,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[5].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[5].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -3343,7 +3686,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[6].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[6].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -3410,7 +3753,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[6].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[6].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -3481,7 +3824,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[6].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[6].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -3548,7 +3891,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[7].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[7].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -3615,7 +3958,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[7].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[7].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -3686,7 +4029,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[7].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[7].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -3753,7 +4096,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[8].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[8].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -3820,7 +4163,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[8].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[8].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -3891,7 +4234,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[8].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[8].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -3958,7 +4301,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[9].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[9].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -4025,7 +4368,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[9].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[9].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -4096,7 +4439,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[9].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[9].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -4163,7 +4506,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[10].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[10].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -4230,7 +4573,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[10].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[10].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -4301,7 +4644,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[10].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[10].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -4368,7 +4711,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[11].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[11].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -4435,7 +4778,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[11].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[11].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -4506,7 +4849,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[11].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[11].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -4573,7 +4916,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[12].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[12].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -4640,7 +4983,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[12].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[12].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -4711,7 +5054,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[12].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[12].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -4778,7 +5121,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[13].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[13].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -4845,7 +5188,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[13].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[13].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -4916,7 +5259,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[13].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[13].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -4983,7 +5326,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[14].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[14].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -5050,7 +5393,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[14].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[14].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -5121,7 +5464,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[14].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[14].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -5188,7 +5531,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[15].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[15].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -5255,7 +5598,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[15].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[15].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -5326,7 +5669,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[15].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[15].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -5393,7 +5736,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[16].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[16].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -5460,7 +5803,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[16].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[16].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -5531,7 +5874,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[16].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[16].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -5598,7 +5941,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[17].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[17].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -5665,7 +6008,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[17].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[17].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -5736,7 +6079,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[17].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[17].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -5803,7 +6146,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[18].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[18].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -5870,7 +6213,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[18].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[18].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -5941,7 +6284,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[18].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[18].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -6008,7 +6351,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[19].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[19].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -6075,7 +6418,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[19].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[19].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -6146,7 +6489,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[19].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[19].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -6213,7 +6556,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[20].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[20].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -6280,7 +6623,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[20].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[20].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -6351,7 +6694,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[20].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[20].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -6418,7 +6761,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[21].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[21].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -6485,7 +6828,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[21].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[21].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -6556,7 +6899,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[21].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[21].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -6623,7 +6966,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[22].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[22].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -6690,7 +7033,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[22].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[22].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -6761,7 +7104,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[22].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[22].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -6828,7 +7171,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[23].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[23].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -6895,7 +7238,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[23].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[23].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -6966,7 +7309,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[23].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[23].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -7033,7 +7376,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[24].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[24].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -7100,7 +7443,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[24].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[24].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -7171,7 +7514,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[24].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[24].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -7238,7 +7581,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[25].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[25].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -7305,7 +7648,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[25].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[25].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -7376,7 +7719,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[25].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[25].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -7443,7 +7786,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[26].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[26].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -7510,7 +7853,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[26].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[26].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -7581,7 +7924,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[26].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[26].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -7648,7 +7991,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[27].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[27].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -7715,7 +8058,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[27].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[27].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -7786,7 +8129,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[27].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[27].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -7853,7 +8196,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[28].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[28].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -7920,7 +8263,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[28].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[28].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -7991,7 +8334,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[28].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[28].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -8058,7 +8401,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[29].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[29].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -8125,7 +8468,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[29].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[29].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -8196,7 +8539,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[29].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[29].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -8263,7 +8606,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[30].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[30].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -8330,7 +8673,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[30].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[30].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -8401,7 +8744,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[30].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[30].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -8468,7 +8811,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[31].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[31].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -8535,7 +8878,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[31].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[31].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -8606,7 +8949,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[31].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[31].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -8673,7 +9016,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[32].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[32].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -8740,7 +9083,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[32].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[32].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -8811,7 +9154,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[32].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[32].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -8878,7 +9221,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[33].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[33].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -8945,7 +9288,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[33].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[33].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -9016,7 +9359,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[33].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[33].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -9083,7 +9426,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[34].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[34].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -9150,7 +9493,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[34].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[34].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -9221,7 +9564,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[34].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[34].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -9288,7 +9631,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[35].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[35].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -9355,7 +9698,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[35].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[35].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -9426,7 +9769,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[35].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[35].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -9493,7 +9836,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[36].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[36].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -9560,7 +9903,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[36].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[36].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -9631,7 +9974,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[36].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[36].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -9698,7 +10041,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[37].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[37].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -9765,7 +10108,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[37].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[37].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -9836,7 +10179,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[37].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[37].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -9903,7 +10246,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[38].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[38].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -9970,7 +10313,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[38].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[38].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -10041,7 +10384,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[38].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[38].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -10108,7 +10451,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[39].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[39].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -10175,7 +10518,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[39].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[39].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -10246,7 +10589,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[39].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[39].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -10313,7 +10656,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[40].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[40].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -10380,7 +10723,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[40].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[40].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -10451,7 +10794,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[40].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[40].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -10518,7 +10861,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[41].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[41].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -10585,7 +10928,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[41].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[41].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -10656,7 +10999,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[41].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[41].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -10723,7 +11066,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[42].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[42].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -10790,7 +11133,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[42].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[42].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -10861,7 +11204,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[42].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[42].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -10928,7 +11271,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[43].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[43].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -10995,7 +11338,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[43].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[43].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -11066,7 +11409,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[43].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[43].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -11133,7 +11476,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[44].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[44].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -11200,7 +11543,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[44].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[44].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -11271,7 +11614,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[44].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[44].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -11338,7 +11681,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[45].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[45].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -11405,7 +11748,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[45].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[45].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -11476,7 +11819,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[45].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[45].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -11543,7 +11886,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[46].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[46].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -11610,7 +11953,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[46].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[46].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -11681,7 +12024,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[46].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[46].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -11748,7 +12091,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[47].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[47].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -11815,7 +12158,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[47].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[47].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -11886,7 +12229,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[47].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[47].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -11953,7 +12296,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[48].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[48].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -12020,7 +12363,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[48].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[48].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -12091,7 +12434,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[48].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[48].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -12158,7 +12501,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[49].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[49].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -12225,7 +12568,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[49].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[49].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -12296,7 +12639,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[49].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[49].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -12363,7 +12706,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[50].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[50].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -12430,7 +12773,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[50].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[50].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -12501,7 +12844,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[50].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[50].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -12568,7 +12911,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[51].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[51].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -12635,7 +12978,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[51].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[51].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -12706,7 +13049,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[51].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[51].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -12773,7 +13116,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[52].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[52].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -12840,7 +13183,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[52].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[52].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -12911,7 +13254,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[52].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[52].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -12978,7 +13321,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[53].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[53].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -13045,7 +13388,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[53].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[53].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -13116,7 +13459,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[53].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[53].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -13183,7 +13526,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[54].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[54].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -13250,7 +13593,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[54].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[54].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -13321,7 +13664,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[54].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[54].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -13388,7 +13731,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[55].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[55].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -13455,7 +13798,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[55].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[55].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -13526,7 +13869,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[55].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[55].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -13593,7 +13936,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[56].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[56].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -13660,7 +14003,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[56].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[56].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -13731,7 +14074,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[56].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[56].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -13798,7 +14141,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[57].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[57].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -13865,7 +14208,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[57].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[57].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -13936,7 +14279,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[57].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[57].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -14003,7 +14346,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[58].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[58].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -14070,7 +14413,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[58].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[58].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -14141,7 +14484,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[58].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[58].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -14208,7 +14551,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[59].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[59].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -14275,7 +14618,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[59].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[59].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -14346,7 +14689,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[59].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[59].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -14413,7 +14756,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[60].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[60].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -14480,7 +14823,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[60].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[60].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -14551,7 +14894,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[60].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[60].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -14618,7 +14961,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[61].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[61].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -14685,7 +15028,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[61].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[61].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -14756,7 +15099,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[61].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[61].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -14823,7 +15166,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[62].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[62].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -14890,7 +15233,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[62].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[62].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -14961,7 +15304,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[62].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[62].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -15028,7 +15371,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[63].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[63].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -15095,7 +15438,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[63].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[63].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -15166,7 +15509,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[63].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[63].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -15233,7 +15576,7 @@ result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
 
 
-|filter|multiplier:mult1[64].mult1
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[64].mult1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -15300,7 +15643,7 @@ result[30] <= lpm_mult:lpm_mult_component.result
 result[31] <= lpm_mult:lpm_mult_component.result
 
 
-|filter|multiplier:mult1[64].mult1|lpm_mult:lpm_mult_component
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[64].mult1|lpm_mult:lpm_mult_component
 dataa[0] => mult_34n:auto_generated.dataa[0]
 dataa[1] => mult_34n:auto_generated.dataa[1]
 dataa[2] => mult_34n:auto_generated.dataa[2]
@@ -15371,7 +15714,7 @@ result[30] <= mult_34n:auto_generated.result[30]
 result[31] <= mult_34n:auto_generated.result[31]
 
 
-|filter|multiplier:mult1[64].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
+|DE2_i2sound|Wrapper:inst5|filter:param|multiplier:mult1[64].mult1|lpm_mult:lpm_mult_component|mult_34n:auto_generated
 dataa[0] => mac_mult1.DATAA
 dataa[1] => mac_mult1.DATAA1
 dataa[2] => mac_mult1.DATAA2
@@ -15436,5 +15779,68 @@ result[28] <= mac_out2.DATAOUT28
 result[29] <= mac_out2.DATAOUT29
 result[30] <= mac_out2.DATAOUT30
 result[31] <= mac_out2.DATAOUT31
+
+
+|DE2_i2sound|serial_to_parallel:inst20
+bclk => data[0]~reg0.CLK
+bclk => data[1]~reg0.CLK
+bclk => data[2]~reg0.CLK
+bclk => data[3]~reg0.CLK
+bclk => data[4]~reg0.CLK
+bclk => data[5]~reg0.CLK
+bclk => data[6]~reg0.CLK
+bclk => data[7]~reg0.CLK
+bclk => data[8]~reg0.CLK
+bclk => data[9]~reg0.CLK
+bclk => data[10]~reg0.CLK
+bclk => data[11]~reg0.CLK
+bclk => data[12]~reg0.CLK
+bclk => data[13]~reg0.CLK
+bclk => data[14]~reg0.CLK
+bclk => data[15]~reg0.CLK
+bclk => bit_counter[0].CLK
+bclk => bit_counter[1].CLK
+bclk => bit_counter[2].CLK
+bclk => bit_counter[3].CLK
+bclk => lrclk_d2.CLK
+bclk => lrclk_d1.CLK
+lrclk => lrclk_d1.DATAIN
+reset_n => data[0]~reg0.ACLR
+reset_n => data[1]~reg0.ACLR
+reset_n => data[2]~reg0.ACLR
+reset_n => data[3]~reg0.ACLR
+reset_n => data[4]~reg0.ACLR
+reset_n => data[5]~reg0.ACLR
+reset_n => data[6]~reg0.ACLR
+reset_n => data[7]~reg0.ACLR
+reset_n => data[8]~reg0.ACLR
+reset_n => data[9]~reg0.ACLR
+reset_n => data[10]~reg0.ACLR
+reset_n => data[11]~reg0.ACLR
+reset_n => data[12]~reg0.ACLR
+reset_n => data[13]~reg0.ACLR
+reset_n => data[14]~reg0.ACLR
+reset_n => data[15]~reg0.ACLR
+reset_n => bit_counter[0].PRESET
+reset_n => bit_counter[1].PRESET
+reset_n => bit_counter[2].PRESET
+reset_n => bit_counter[3].PRESET
+in_data => data[0]~reg0.DATAIN
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[8] <= data[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[9] <= data[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[10] <= data[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[11] <= data[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[12] <= data[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[13] <= data[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[14] <= data[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[15] <= data[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

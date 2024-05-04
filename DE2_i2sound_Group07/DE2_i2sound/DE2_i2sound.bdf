@@ -157,7 +157,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1392 480 1568 496)
+	(rect 1376 296 1552 312)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "AUD_DACDAT" (rect 90 0 164 12)(font "Arial" ))
 	(pt 0 8)
@@ -457,7 +457,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 992 440 1024 456)
+	(rect 992 312 1024 328)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst9" (rect 3 5 26 17)(font "Arial" )(invisible))
 	(port
@@ -472,7 +472,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 184 400 352 512)
+	(rect 1160 272 1328 384)
 	(text "parallel_to_serial" (rect 5 0 86 12)(font "Arial" ))
 	(text "inst10" (rect 8 96 37 108)(font "Arial" ))
 	(port
@@ -515,7 +515,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1160 272 1336 384)
+	(rect 184 400 360 512)
 	(text "serial_to_parallel" (rect 5 0 86 12)(font "Arial" ))
 	(text "inst20" (rect 8 96 37 108)(font "Arial" ))
 	(port
@@ -634,10 +634,6 @@ applicable agreement for further details.
 	(pt 624 152)
 )
 (connector
-	(pt 1216 176)
-	(pt 1288 176)
-)
-(connector
 	(pt 1368 208)
 	(pt 1376 208)
 )
@@ -654,10 +650,6 @@ applicable agreement for further details.
 	(pt 184 464)
 )
 (connector
-	(pt 184 432)
-	(pt 184 392)
-)
-(connector
 	(pt 160 448)
 	(pt 160 416)
 )
@@ -667,42 +659,13 @@ applicable agreement for further details.
 	(pt 64 416)
 )
 (connector
-	(text "<<__$DEF_ALIAS2341>>" (rect 74 376 197 388)(font "Arial" )(invisible))
-	(pt 184 392)
-	(pt 64 392)
-)
-(connector
 	(pt 184 480)
 	(pt 56 480)
 	(bus)
 )
 (connector
-	(pt 1384 488)
-	(pt 1392 488)
-	(bus)
-)
-(connector
-	(text "data_dsp" (rect 352 416 396 428)(font "Arial" ))
-	(pt 352 432)
-	(pt 400 432)
-)
-(connector
-	(text "data_out_dsp" (rect 1064 424 1130 436)(font "Arial" ))
-	(pt 1064 440)
-	(pt 1112 440)
-)
-(connector
-	(pt 1008 456)
-	(pt 1008 336)
-)
-(connector
 	(pt 1008 336)
 	(pt 1160 336)
-)
-(connector
-	(text "BCLK" (rect 1130 288 1158 300)(font "Arial" ))
-	(pt 1120 304)
-	(pt 1160 304)
 )
 (connector
 	(text "CLK" (rect 1130 304 1151 316)(font "Arial" ))
@@ -710,44 +673,9 @@ applicable agreement for further details.
 	(pt 1160 320)
 )
 (connector
-	(pt 1112 352)
-	(pt 1160 352)
-)
-(connector
-	(pt 1112 440)
-	(pt 1112 352)
-)
-(connector
-	(pt 1384 304)
-	(pt 1336 304)
-	(bus)
-)
-(connector
-	(pt 1384 488)
-	(pt 1384 304)
-	(bus)
-)
-(connector
 	(text "CLK" (rect 562 472 583 484)(font "Arial" ))
 	(pt 608 488)
 	(pt 552 488)
-)
-(connector
-	(text "data_dsp" (rect 562 504 606 516)(font "Arial" ))
-	(pt 608 520)
-	(pt 552 520)
-	(bus)
-)
-(connector
-	(text "data_out_dsp" (rect 760 352 826 364)(font "Arial" ))
-	(pt 816 344)
-	(pt 864 344)
-	(bus)
-)
-(connector
-	(pt 864 344)
-	(pt 864 488)
-	(bus)
 )
 (connector
 	(pt 512 408)
@@ -756,4 +684,56 @@ applicable agreement for further details.
 (connector
 	(pt 512 504)
 	(pt 608 504)
+)
+(connector
+	(pt 1008 336)
+	(pt 1008 328)
+)
+(connector
+	(pt 360 432)
+	(pt 424 432)
+	(bus)
+)
+(connector
+	(pt 608 520)
+	(pt 424 520)
+	(bus)
+)
+(connector
+	(pt 424 432)
+	(pt 424 520)
+	(bus)
+)
+(connector
+	(pt 864 488)
+	(pt 1160 488)
+	(bus)
+)
+(connector
+	(pt 1160 488)
+	(pt 1160 352)
+	(bus)
+)
+(connector
+	(text "XCK" (rect 1194 160 1215 172)(font "Arial" ))
+	(pt 1184 176)
+	(pt 1288 176)
+)
+(connector
+	(text "BCLK" (rect 1098 288 1126 300)(font "Arial" ))
+	(pt 1160 304)
+	(pt 1088 304)
+)
+(connector
+	(pt 184 432)
+	(pt 184 392)
+)
+(connector
+	(text "BCLK" (rect 74 376 102 388)(font "Arial" ))
+	(pt 184 392)
+	(pt 64 392)
+)
+(connector
+	(pt 1328 304)
+	(pt 1376 304)
 )

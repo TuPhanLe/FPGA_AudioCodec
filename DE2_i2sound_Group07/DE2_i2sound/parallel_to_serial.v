@@ -1,18 +1,11 @@
+/* This module takes 16-bit sample and transmits it one bit per bclk cycle
+   It is assumed that only one sample comes onto its input 1 bclk after
+   every positive edge of lrclk
+   That same sample is sent to both left and right channels
+*/
 
-module parallel_to_serial 
-( 		bclk, 
-	 lrclk, 
-	 reset_n, 
-	 in_data, 
-	  data
-);
+module parallel_to_serial (input bclk, input lrclk, input reset_n, input [15:0] in_data, output reg data);
 
-
-	input bclk;
-	input lrclk; 
-	input reset_n; 
-	input in_data; 
-	output reg [15:0] data;
 reg [3:0] bit_counter;
 reg [15:0] data_buffer;		// Buffer the input data, because it might change
 reg lrclk_d1;
@@ -53,6 +46,8 @@ wire new_data;
 		begin
 			if (bit_counter != 4'hf || ~new_data)
 				data <= data_buffer[bit_counter];
+			else if (start)
+				data <= in_data[4'hf];
 			else
 				data <= 1'b0;
 		end
