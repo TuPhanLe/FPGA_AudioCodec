@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_i2sound
-Sat Apr 27 17:05:05 2024
+Sat May 04 12:43:43 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Apr 27 17:05:05 2024               ;
+; Analysis & Synthesis Status        ; Failed - Sat May 04 12:43:43 2024               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE2_i2sound                                     ;
 ; Top-level Entity Name              ; DE2_i2sound                                     ;
@@ -156,14 +156,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Apr 27 17:05:04 2024
+    Info: Processing started: Sat May 04 12:43:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_i2sound -c DE2_i2sound
-Info (12021): Found 5 design units, including 5 entities, in source file wrapper.v
+Info (12021): Found 1 design units, including 1 entities, in source file wrapper.v
     Info (12023): Found entity 1: Wrapper
-    Info (12023): Found entity 2: signed_adder
-    Info (12023): Found entity 3: signed_multiply
-    Info (12023): Found entity 4: register
-    Info (12023): Found entity 5: serial_fir_filter
 Info (12021): Found 1 design units, including 1 entities, in source file de2_i2sound.bdf
     Info (12023): Found entity 1: DE2_i2sound
 Info (12021): Found 1 design units, including 1 entities, in source file clock_500.v
@@ -172,12 +168,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file i2c.v
     Info (12023): Found entity 1: i2c
 Info (12021): Found 1 design units, including 1 entities, in source file keytr.v
     Info (12023): Found entity 1: keytr
-Warning (10236): Verilog HDL Implicit Net warning at Wrapper.v(115): created implicit net for "WIDTH"
-Error (10137): Verilog HDL Procedural Assignment error at Wrapper.v(64): object "dataout" on left-hand side of assignment must have a variable data type File: D:/A_Learn/4th_year/232/4_XLTHS_FPGA/FPGA/3_BigProject/Reference/DE2_i2sound/DE2_i2sound/Wrapper.v Line: 64
-Error (10137): Verilog HDL Procedural Assignment error at Wrapper.v(67): object "dataout" on left-hand side of assignment must have a variable data type File: D:/A_Learn/4th_year/232/4_XLTHS_FPGA/FPGA/3_BigProject/Reference/DE2_i2sound/DE2_i2sound/Wrapper.v Line: 67
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4576 megabytes
-    Error: Processing ended: Sat Apr 27 17:05:05 2024
+Info (12021): Found 1 design units, including 1 entities, in source file parallel_to_serial.v
+    Info (12023): Found entity 1: parallel_to_serial
+Info (12021): Found 1 design units, including 1 entities, in source file filter.v
+    Info (12023): Found entity 1: filter
+Info (12021): Found 1 design units, including 1 entities, in source file echo_machine.v
+    Info (12023): Found entity 1: echo_machine
+Info (12021): Found 1 design units, including 1 entities, in source file multiplier.v
+    Info (12023): Found entity 1: multiplier
+Info (12021): Found 1 design units, including 1 entities, in source file shiftregister.v
+    Info (12023): Found entity 1: shiftregister
+Info (12021): Found 1 design units, including 1 entities, in source file serial_to_parallel.v
+    Info (12023): Found entity 1: serial_to_parallel
+Info (12127): Elaborating entity "DE2_i2sound" for the top level hierarchy
+Error (275023): Width mismatch in AUD_DACDAT -- source is ""data[15..0]" (ID serial_to_parallel:inst20)"
+Error (275024): Width mismatch in port "input_sample[15..0]" of instance "inst5" and type Wrapper -- source is ""data_dsp""
+Error (275024): Width mismatch in port "in_data[15..0]" of instance "inst10" and type parallel_to_serial -- source is ""AUD_ADCDAT""
+Error (275023): Width mismatch in data_out_dsp -- source is ""output_sample[15..0]" (ID Wrapper:inst5)"
+Error (275023): Width mismatch in data_out_dsp -- source is ""output_sample[15..0]" (ID Wrapper:inst5)"
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 6 errors, 0 warnings
+    Error: Peak virtual memory: 4592 megabytes
+    Error: Processing ended: Sat May 04 12:43:43 2024
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
