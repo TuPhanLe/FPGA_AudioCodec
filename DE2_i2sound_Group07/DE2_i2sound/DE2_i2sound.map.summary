@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat May 04 15:48:59 2024
-Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Analysis & Synthesis Status : Successful - Sun May 05 13:24:50 2024
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : DE2_i2sound
 Top-level Entity Name : DE2_i2sound
 Family : Cyclone II
-Total logic elements : 5,212
-    Total combinational functions : 5,183
-    Dedicated logic registers : 106
-Total registers : 106
+Total logic elements : 101
+    Total combinational functions : 89
+    Dedicated logic registers : 68
+Total registers : 68
 Total pins : 10
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 70
+Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

@@ -78,4 +78,6 @@ set_global_assignment -name VERILOG_FILE shiftregister.v
 set_global_assignment -name VERILOG_FILE serial_to_parallel.v
 set_location_assignment PIN_A4 -to AUD_DACDATA
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_VCC -to AUD_DACDATA
+set_global_assignment -name VERILOG_FILE serial_fir_filter.v
+set_global_assignment -name VERILOG_FILE FIR.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

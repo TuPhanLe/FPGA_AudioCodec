@@ -15,7 +15,7 @@ output reg [15:0] output_sample;
 //	reg  [1:0] switches;
 	
 //	echo_machine param (.sample_clock(sample_clock), .input_sample(input_sample), .output_sample(myecho));
-	filter param(.sample_clock(sample_clock), .reset(reset), .input_sample1(input_sample), .output_sample1(myfilter));
+	FIR param(.clk(sample_clock), .rst_n(reset), .filter_in(input_sample), .filter_out(myfilter));
 	
 always @(posedge sample_clock)
 begin

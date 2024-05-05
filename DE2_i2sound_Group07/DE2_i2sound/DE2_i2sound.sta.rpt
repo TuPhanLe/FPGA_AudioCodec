@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for DE2_i2sound
-Sat May 04 15:49:15 2024
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Sun May 05 13:25:00 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -78,7 +78,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -88,7 +88,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------+--------+--------------------------+
 ; SDC File Path   ; Status ; Read at                  ;
 +-----------------+--------+--------------------------+
-; DE2_i2sound.sdc ; OK     ; Sat May 04 15:49:14 2024 ;
+; DE2_i2sound.sdc ; OK     ; Sun May 05 13:25:00 2024 ;
 +-----------------+--------+--------------------------+
 
 
@@ -204,8 +204,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 7.636 ; 7.636 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 7.781 ; 7.781 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 8.980 ; 8.980 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 9.659 ; 9.659 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -214,8 +214,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 7.636 ; 7.636 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 7.781 ; 7.781 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 8.980 ; 8.980 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 9.659 ; 9.659 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -316,8 +316,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 4.292 ; 4.292 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 4.096 ; 4.096 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 4.884 ; 4.884 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 5.041 ; 5.041 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -326,8 +326,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 4.292 ; 4.292 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 4.096 ; 4.096 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 4.884 ; 4.884 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 5.041 ; 5.041 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -348,8 +348,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 7.636 ; 7.636 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 7.781 ; 7.781 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 8.980 ; 8.980 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 9.659 ; 9.659 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -358,8 +358,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; AUD_XCK   ; 50MHZ      ; 4.292 ; 4.292 ; Rise       ; 50MHZ           ;
-; I2C_SCLK  ; 50MHZ      ; 4.096 ; 4.096 ; Rise       ; 50MHZ           ;
+; AUD_XCK   ; 50MHZ      ; 4.884 ; 4.884 ; Rise       ; 50MHZ           ;
+; I2C_SCLK  ; 50MHZ      ; 5.041 ; 5.041 ; Rise       ; 50MHZ           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -401,11 +401,11 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 5     ; 5    ;
-; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 31    ; 31   ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 11    ; 11   ;
+; Unconstrained Clocks            ; 3     ; 3    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
 +---------------------------------+-------+------+
 
 
@@ -413,9 +413,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat May 04 15:49:13 2024
+    Info: Processing started: Sun May 05 13:25:00 2024
 Info: Command: quartus_sta DE2_i2sound -c DE2_i2sound
 Info: qsta_default_script.tcl version: #1
 Info (21077): Low junction temperature is 0 degrees C
@@ -423,9 +423,7 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'DE2_i2sound.sdc'
 Warning (332060): Node: CLOCK_500:inst4|COUNTER_500[9] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: i2c:inst|END was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: AUD_ADCLRCK was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: keytr:inst1|KEYON was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Info (332140): No fmax paths to report
@@ -441,9 +439,7 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info: Analyzing Fast Model
 Warning (332060): Node: CLOCK_500:inst4|COUNTER_500[9] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: i2c:inst|END was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: AUD_ADCLRCK was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: keytr:inst1|KEYON was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
@@ -455,10 +451,10 @@ Info (332146): Worst-case minimum pulse width slack is 9.000
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 376 megabytes
-    Info: Processing ended: Sat May 04 15:49:15 2024
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:00
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4554 megabytes
+    Info: Processing ended: Sun May 05 13:25:00 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 
